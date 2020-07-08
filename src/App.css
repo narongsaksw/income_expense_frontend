@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(../src/dollar.png);
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   font-weight: 400;

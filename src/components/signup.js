@@ -56,72 +56,78 @@ export default class SignUp extends Component {
             alert('Sign Up Success')
             return res
         })
+        .then( window.location.reload() )
         }
     }
 
     render() {
         return (
-            <form onSubmit={this.SignUp}>
-                <h3>Sign Up</h3>
+            <div className="auth-wrapper">
+                <div className="auth-inner">
+                    <form onSubmit={this.SignUp}>
+                        <h3>Sign Up</h3>
 
-                <div className="form-group">
-                    <label>First name</label>
-                    <input 
-                        type="text" 
-                        pattern="^[ก-๏a-zA-Z\s]+$" 
-                        title='Characters Only'
-                        className="form-control" 
-                        placeholder="First name"
-                        onChange={this.onFirstnameChange}
-                        />
+                        <div className="form-group">
+                            <label>First name</label>
+                            <input 
+                                type="text" 
+                                pattern="^[ก-๏a-zA-Z\s]+$" 
+                                title='Characters Only'
+                                className="form-control" 
+                                placeholder="First name"
+                                onChange={this.onFirstnameChange}
+                                />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Last name</label>
+                            <input 
+                                type="text" 
+                                pattern="^[ก-๏a-zA-Z\s]+$" 
+                                title='Characters Only'
+                                className="form-control" 
+                                placeholder="Last name"
+                                onChange={this.onLastnameChange}
+                                />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input 
+                                type="text" 
+                                pattern="^[a-zA-Z0-9\s]+$" 
+                                className="form-control" 
+                                placeholder="Enter Username"
+                                onChange={this.onUsernameChange}
+                                />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input 
+                                type="password" 
+                                pattern="^[a-zA-Z0-9\s]+$"
+                                title='more 6 Characters'
+                                minLength={6} 
+                                className="form-control" 
+                                placeholder="Enter password"
+                                onChange={this.onPasswordChange}
+                                />
+                        </div>
+
+                        <button 
+                            type="submit" 
+                            className="btn btn-primary btn-block"
+                            >Sign Up
+                        </button>
+
+                        <p className="forgot-password text-right">
+                            Already registered 
+                            <a href="/sign-in">sign in?</a>
+                        </p>
+                    </form>
                 </div>
-
-                <div className="form-group">
-                    <label>Last name</label>
-                    <input 
-                        type="text" 
-                        pattern="^[ก-๏a-zA-Z\s]+$" 
-                        title='Characters Only'
-                        className="form-control" 
-                        placeholder="Last name"
-                        onChange={this.onLastnameChange}
-                        />
-                </div>
-
-                <div className="form-group">
-                    <label>Username</label>
-                    <input 
-                        type="text" 
-                        pattern="^[a-zA-Z0-9\s]+$" 
-                        className="form-control" 
-                        placeholder="Enter Username"
-                        onChange={this.onUsernameChange}
-                        />
-                </div>
-
-                <div className="form-group">
-                    <label>Password</label>
-                    <input 
-                        type="password" 
-                        pattern="^[a-zA-Z0-9\s]+$"
-                        title='more 6 Characters'
-                        minLength={6} 
-                        className="form-control" 
-                        placeholder="Enter password"
-                        onChange={this.onPasswordChange}
-                        />
-                </div>
-
-                <button 
-                    type="submit" 
-                    className="btn btn-primary btn-block"
-                    >Sign Up
-                </button>
-
-                <p className="forgot-password text-right">
-                    Already registered <a href="/sign-in">sign in?</a>
-                </p>
-            </form>
+            </div>
         );
     }
 }
