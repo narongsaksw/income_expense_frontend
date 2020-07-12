@@ -40,17 +40,7 @@ export default class Login extends Component {
                 return res.data
             })
             .then(() => {
-                const decode_token = jwt_decode(JSON.parse(localStorage.getItem('user')))
-                    if(decode_token && decode_token.user.role === 'admin'){
-                        this.props.history.push('/admin');
-                    }
-                    else if(decode_token && decode_token.user.role === 'user'){
-                        this.props.history.push('/user');
-                    }
-                    else{
-                        this.props.history.push('/sign-in');
-                        localStorage.removeItem('user')
-                    }
+                this.props.history.push('/content');
             },
             () => {
               this.setState({

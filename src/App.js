@@ -5,8 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Login from "./components/login";
 import SignUp from "./components/signup";
-import AdminPage from "./components/adminPage";
-import UserPage from "./components/userPage";
+import mainContent from "./components/mainContent";
 
 class App extends Component {
   render() {
@@ -16,8 +15,7 @@ class App extends Component {
                 <Route exact path='/' component={Login} />
                 <Route path="/sign-in" component={Login} />
                 <Route path="/sign-up" component={SignUp} />
-                <Route path="/user" component={UserPage} />
-                <Route path="/admin" component={AdminPage} />
+                <Route path="/content" component={mainContent} />
               </Switch>  
       </Router>
     );

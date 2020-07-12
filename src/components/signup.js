@@ -52,11 +52,8 @@ export default class SignUp extends Component {
                 password : password
             }
         axios.post(`${api}/users`, data)
-        .then(res => {
-            alert('Sign Up Success')
-            return res
-        })
-        .then( window.location.reload() )
+        .then( alert('Register Success'))
+        .then( this.props.history.push('/sign-in'))
         }
     }
 
